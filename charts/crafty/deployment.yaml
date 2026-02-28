@@ -20,4 +20,24 @@ spec:
         image: registry.gitlab.com/crafty-controller/crafty-4:latest
         ports:
         - containerPort: 25565
-        - containerPort: 8443
+        - containerPort: 8111
+        volumeMounts:
+            - name: crafty-data
+              mountPath: /crafty/backups
+              subPath: backups
+            - name: crafty-data
+              mountPath: /crafty/logs
+              subPath: logs
+            - name: crafty-data
+              mountPath: /crafty/servers
+              subPath: servers
+            - name: crafty-data
+              mountPath: /crafty/app/config
+              subPath: config
+            - name: crafty-data
+              mountPath: /crafty/import
+              subPath: import
+      volumes:
+        - name: crafty-data
+          persistentVolumeClaim:
+            claimName: crafty-data
