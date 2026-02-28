@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: crafty-deployment
+  namespace: minecraft-server
+  labels:
+    app: crafty
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: crafty
+  template:
+    metadata:
+      labels:
+        app: crafty
+    spec:
+      containers:
+      - name: crafty
+        image: registry.gitlab.com/crafty-controller/crafty-4:latest
+        ports:
+        - containerPort: 25565
+        - containerPort: 8443
