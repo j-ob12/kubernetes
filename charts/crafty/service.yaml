@@ -10,7 +10,7 @@ spec:
   ports:
     - name: web
       port: 8111
-      targetPort: 8443
+      targetPort: 8111
       nodePort: 30443
     - name: minecraft
       port: 25565
