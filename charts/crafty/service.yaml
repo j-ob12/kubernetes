@@ -9,8 +9,8 @@ spec:
     app: crafty
   ports:
     - name: web
-      port: 8111
-      targetPort: 8111
+      port: 8443
+      targetPort: 8443
       nodePort: 30111
     - name: minecraft
       port: 25565

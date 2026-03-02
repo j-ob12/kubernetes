@@ -20,7 +20,7 @@ spec:
         image: registry.gitlab.com/crafty-controller/crafty-4:latest
         ports:
         - containerPort: 25565
-        - containerPort: 8111
+        - containerPort: 8443
         volumeMounts:
             - name: crafty-data
               mountPath: /crafty/backups
